@@ -1,11 +1,23 @@
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
+var fs = require('fs');
+var csv = require('fast-csv');
 const { dialog } = require('electron').remote;
-console.log(dialog);
+
 
 function showOpenDialog() {
-    dialog.showOpenDialog({ properties: ['openFile', 'openDirectory', 'multiSelections'] });
+    csvFileName = dialog.showOpenDialog({ properties: ['openFile', 'openDirectory', 'multiSelections'], filters: [{name: "CSV", extensions: ['csv']}] });
+    var stream = fs.createReadStream(String(csvFileName));
+
+    csv
+        .fromStream(stream, { headers: true })
+        .on("data", function (data) {
+            console.log(data);
+        })
+        .on("end", function () {
+            console.log("done");
+        });
 }
 
-document.querySelector('#btnOpenFile').addEventListener('click', showOpenDialog);
+document.querySelector('#btnShowOpenDialog').addEventListener('click', showOpenDialog);
