@@ -25,7 +25,7 @@ function createWindow () {
   mainWindow.jQuery = mainWindow.$ = require('./node_modules/jquery/dist/jquery.js');
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
