@@ -22,7 +22,7 @@ function createWindow () {
     slashes: true
   }));
 
-  mainWindow.jQuery = mainWindow.$ = require('jquery');
+  mainWindow.jQuery = mainWindow.$ = require('./node_modules/jquery/dist/jquery.js');
 
   // Open the DevTools.
   //mainWindow.webContents.openDevTools();
