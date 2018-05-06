@@ -12,7 +12,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 
 ```bash
 # Clone this repository
-git clone https://github.com/electron/electron-quick-start
+git clone https://github.com/gitdarrion/mljs-electron-app.git
 # Go into the repository
 cd electron-quick-start
 # Install dependencies
