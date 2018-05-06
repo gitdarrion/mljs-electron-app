@@ -19,4 +19,4 @@ function showOpenDialog() {
         });
 }
 
-document.querySelector('#btnShowOpenDialog').addEventListener('click', showOpenDialog);
+//document.querySelector('#btnShowOpenDialog').addEventListener('click', showOpenDialog);
