@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,6 +10,44 @@
   <script>
     require('./renderer.js'); 
   </script>
+</body>
+
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Photon</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./photon/dist/css/photon.css">
+
+  <!-- Electron Javascript -->
+  <script src="main.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="window">
+    
+    <header class="toolbar toolbar-header">
+      <h1 class="title">Header</h1>
+    </header>
+
+    <div class="window-content">
+      <webview src="csv.html" style="min-width: 100vw;" nodeintegration></webview>
+      <script>
+        require('./renderer.js'); 
+      </script>
+    </div>
+
+    <footer class="toolbar toolbar-footer">
+      <h1 class="title">Footer</h1>
+    </footer>
+
+  </div>
 </body>
 
 </html>
