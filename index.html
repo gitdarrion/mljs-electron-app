@@ -12,31 +12,34 @@
 <body>
   <div class="window">
     
-    <!-- .toolbar-header sits at the top of your app --> 
-    <div class="tab-group">
-
-      <div class="tab-item">
-        <span class="icon icon-cancel icon-close-tab"></span>
-        Tab
+    <!-- Header with tabs, close-tab buttons, and add-tab button. -->
+    <header>
+      <div class="tab-group">
+      
+        <div class="tab-item">
+          <span class="icon icon-cancel icon-close-tab"></span>
+          Tab
+        </div>
+      
+        <div class="tab-item tab-item-fixed">
+          <span class="icon icon-plus"></span>
+        </div>
+      
       </div>
+    </header>
 
-      <div class="tab-item tab-item-fixed">
-        <span class="icon icon-plus"></span>
-      </div>
-
-    </div>
-
+    <!-- Main content. -->
     <div class="window-content">
       
     </div>
 
-  </div>
-
+    <!-- Footer with open-file icon. -->
     <footer class="toolbar toolbar-footer">
-      <h1 class="title">Footer</h1>
+      <button class="btn btn-default" id="button_open_file">
+        <span class="icon icon-folder"></span>
+      </button>
     </footer>
 
-  </div>
 
   <!-- Renderer Javascript -->
   <script>
