@@ -7,43 +7,45 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./photon/dist/css/photon.css">
 
-  <!-- Electron Javascript -->
-  <script src="main.js" charset="utf-8"></script>
-  
 </head>
 
 <body>
-  <!-- Wrap your entire app inside .window -->
   <div class="window">
     
     <!-- .toolbar-header sits at the top of your app --> 
     <div class="tab-group">
+
       <div class="tab-item">
         <span class="icon icon-cancel icon-close-tab"></span>
         Tab
       </div>
+
       <div class="tab-item tab-item-fixed">
         <span class="icon icon-plus"></span>
       </div>
+
     </div>
 
-    <!-- Your app's content goes inside .window-content -->
     <div class="window-content">
-      <div class="padded-more">
-        <h1>Welcome to Photon</h1>
-        <p>
-          Thanks for downloading Photon. This is an example HTML page that's linked up to compiled Photon CSS, has the proper meta
-          tags and the HTML structure.
-        </p>
-      </div>
+      
     </div>
 
   </div>
 
+    <footer class="toolbar toolbar-footer">
+      <h1 class="title">Footer</h1>
+    </footer>
+
+  </div>
+
+  <!-- Renderer Javascript -->
   <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
+    require('./renderer.js');
   </script>
+
+  <!-- Electron Javascript -->
+  <script src="main.js" charset="utf-8"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ML.JS</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./photon/dist/css/photon.css">
+  <link rel="stylesheet" href="main.css"
+
+  <!-- Electron Javascript -->
+  <!--<script src="main.js" charset="utf-8"></script>-->
+</head>
+
+<body>
+  <!-- Wrap your entire app inside .window -->
+  <div class="window">
+    
+    <!-- .toolbar-header sits at the top of your app -->
+    <!--<header class="toolbar toolbar-header text-center">
+    
+    </header>-->
+
+    <!-- Your app's content goes inside .window-content -->
+    <div class="window-content">
+    
+    </div>
+
+    <footer class="toolbar toolbar-footer">
+      <div class="toolbar-actions">
+        <button class="btn btn-default">
+          Cancel
+        </button>
+    
+        <button class="btn btn-primary pull-right" id="btnOpenFile">
+          Open
+        </button>
+      </div>
+    </footer>
+
+  </div>
+
+  
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js');
+  </script>
+</body>
+
+</html>
