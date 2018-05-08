@@ -11,36 +11,32 @@
 </head>
 
 <body>
+
   <div class="window">
-    
-    <!-- Header with tabs, close-tab buttons, and add-tab button. -->
-    <header>
-      <div class="tab-group">
-      
-        <div class="tab-item">
-          <span class="icon icon-cancel icon-close-tab"></span>
-          Tab
-        </div>
-      
-        <div class="tab-item tab-item-fixed">
-          <span class="icon icon-plus"></span>
-        </div>
-      
-      </div>
-    </header>
-
-    <!-- Main content. -->
     <div class="window-content">
-      
+      <div class="pane-group">
+        <div class="pane-sm sidebar">
+          <nav class="nav-group">
+            <a class="nav-group-item active">
+              Datasets
+            </a>
+            <span class="nav-group-item">
+              Models
+            </span>
+          </nav>
+        </div>
+        <div class="pane">
+          Hey!
+        </div>
+      </div>
     </div>
-
     <!-- Footer with open-file icon. -->
     <footer class="toolbar toolbar-footer">
       <button id="button_open_file">
         <span class="icon icon-folder"></span>
       </button>
     </footer>
-
+  </div>
 
   <!-- Renderer Javascript -->
   <script>
