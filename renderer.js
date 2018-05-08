@@ -3,17 +3,33 @@
 // All of the Node.js APIs are available in this process.
 
 // MODULES
-var remote = require('electron').remote;
-var dialog = remote.dialog; 
-var fs = require('fs');
-var csv = require('fast-csv');
+const remote = require('electron').remote;
+const dialog = remote.dialog; 
+const $ = require('./node_modules/jquery/dist/jquery'); 
 
-// ELEMENT FUNCTIONALITY
+// NAVIGATION FUNCTIONALITY
 
-function onClickButtonOpenFile() {
+function onClickNavButton_Datasets() {
+
+    console.log("Datasets button clicked."); 
+    $("#nav_button_models").removeClass("active");
+    $("#nav_button_datasets").addClass("active");
+}
+
+function onClickNavButton_Models() {
+
+    console.log("Models button clicked."); 
+    $("#nav_button_datasets").removeClass("active");
+    $("#nav_button_models").addClass("active");
+}
+
+// BUTTON FUNCTIONALITY
+function onClickButton_OpenFile() {
 
     // TODO: Limit the number of files 1. 
-    
+
+    var fs = require('fs');
+    var csv = require('fast-csv');
     var csv_files = dialog.showOpenDialog({ 
 
         properties: ['openFile', 'openDirectory', 'multiSelections'], 
@@ -48,10 +64,15 @@ function onClickButtonOpenFile() {
         }); // The 'fast-csv' module pipeline that is engineered for processing CSV file data.
 }
 
-// ELEMENTS
+// jQuery
+$(document).ready(function(){
 
-var button_open_file = document.querySelector("#button_open_file");
 
-// EVENTS
+    // BUTTONS
+    $("#button_open_file").on("click", onClickButton_OpenFile); 
 
-button_open_file.addEventListener("click", onClickButtonOpenFile);
+    // NAVIGATION
+    $("#nav_button_datasets").on("click", onClickNavButton_Datasets); 
+    $("#nav_button_models").on("click", onClickNavButton_Models);
+
+});
