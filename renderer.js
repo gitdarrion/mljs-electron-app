@@ -13,20 +13,33 @@ function onClickNavButton_Datasets() {
 
     console.log("Datasets button clicked."); 
     $("#nav_button_models").removeClass("active");
+    $("#nav_button_regression").removeClass("active");
     $("#nav_button_datasets").addClass("active");
+
 }
 
 function onClickNavButton_Models() {
 
     console.log("Models button clicked."); 
     $("#nav_button_datasets").removeClass("active");
+    $("#nav_button_regression").removeClass("active");
     $("#nav_button_models").addClass("active");
+    
+}
+
+function onClickNavButton_Regression() {
+    
+    console.log("Navigation button clicked.");
+    $("#nav_button_datasets").removeClass("active");
+    $("#nav_button_models").removeClass("active");
+    $("#nav_button_regression").addClass("active");
 }
 
 // BUTTON FUNCTIONALITY
 function onClickButton_OpenFile() {
 
     // TODO: Limit the number of files 1. 
+    // TODO: Cast multidimensional array to Matrix.
 
     var fs = require('fs');
     var csv = require('fast-csv');
@@ -74,5 +87,6 @@ $(document).ready(function(){
     // NAVIGATION
     $("#nav_button_datasets").on("click", onClickNavButton_Datasets); 
     $("#nav_button_models").on("click", onClickNavButton_Models);
+    $("#nav_button_regression").on("click", onClickNavButton_Regression);
 
 });
