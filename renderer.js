@@ -24,12 +24,12 @@ function onClickNavButton_Models() {
     $("#nav_button_datasets").removeClass("active");
     $("#nav_button_regression").removeClass("active");
     $("#nav_button_models").addClass("active");
-    
+
 }
 
 function onClickNavButton_Regression() {
     
-    console.log("Navigation button clicked.");
+    console.log("Regression button clicked.");
     $("#nav_button_datasets").removeClass("active");
     $("#nav_button_models").removeClass("active");
     $("#nav_button_regression").addClass("active");
