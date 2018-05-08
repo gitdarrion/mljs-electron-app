@@ -3,7 +3,6 @@
 // All of the Node.js APIs are available in this process.
 
 // MODULES
-
 var remote = require('electron').remote;
 var dialog = remote.dialog; 
 var fs = require('fs');
