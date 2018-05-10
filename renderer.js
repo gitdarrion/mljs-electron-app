@@ -6,8 +6,6 @@
 const remote = require('electron').remote;
 const dialog = remote.dialog; 
 const $ = require('./node_modules/jquery/dist/jquery'); 
-const x = [];
-const y = []; 
 
 // NAVIGATION FUNCTIONALITY
 
@@ -44,12 +42,13 @@ function onClickButton_OpenFile() {
     // TODO: Accept 2 files: x and y | Train and Test set
     // TODO: Cast multidimensional array to Matrix.
 
+    const { Matrix } = require('./node_modules/ml-matrix');
     var fs = require('fs');
     var csv = require('fast-csv');
     var csv_files = dialog.showOpenDialog({ 
 
-        properties: ['openFile', 'openDirectory', 'multiSelections'], 
-        filters: [{ name: "CSV", extensions: ['csv'] }] 
+        properties: ['openFile'], 
+        filters: [{ name: "CSV", extensions: ['csv']}] 
 
     }); // List of file names.
     
@@ -80,6 +79,9 @@ function onClickButton_OpenFile() {
         }); // The 'fast-csv' module pipeline that is engineered for processing CSV file data.
 
     
+    var matrix = Matrix(csv_data);
+    console.log("Matrix: ", matrix); 
+    return matrix; 
 }
 
 // jQuery
@@ -95,3 +97,4 @@ $(document).ready(function(){
     $("#nav_button_regression").on("click", onClickNavButton_Regression);
 
 });
+
