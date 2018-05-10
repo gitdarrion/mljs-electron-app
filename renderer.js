@@ -6,6 +6,8 @@
 const remote = require('electron').remote;
 const dialog = remote.dialog; 
 const $ = require('./node_modules/jquery/dist/jquery'); 
+const x = [];
+const y = []; 
 
 // NAVIGATION FUNCTIONALITY
 
@@ -33,12 +35,13 @@ function onClickNavButton_Regression() {
     $("#nav_button_datasets").removeClass("active");
     $("#nav_button_models").removeClass("active");
     $("#nav_button_regression").addClass("active");
+
 }
 
 // BUTTON FUNCTIONALITY
 function onClickButton_OpenFile() {
 
-    // TODO: Limit the number of files 1. 
+    // TODO: Accept 2 files: x and y | Train and Test set
     // TODO: Cast multidimensional array to Matrix.
 
     var fs = require('fs');
@@ -75,6 +78,8 @@ function onClickButton_OpenFile() {
             console.log("End."); 
 
         }); // The 'fast-csv' module pipeline that is engineered for processing CSV file data.
+
+    
 }
 
 // jQuery

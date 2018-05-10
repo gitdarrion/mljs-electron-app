@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "jquery": "^3.3.1",
     "fast-csv": "^2.4.1",
+    "jquery": "^3.3.1",
     "ml-regression": "^4.4.2"
   }
 }
